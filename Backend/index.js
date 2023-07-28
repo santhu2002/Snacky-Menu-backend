@@ -12,7 +12,7 @@ app.use(cors())
 app.use(express.json())
 
 //Available Routes
-app.use('/api/items',require('./routes/items.js'))
+app.use('/api/items',require('./routes/item'))
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

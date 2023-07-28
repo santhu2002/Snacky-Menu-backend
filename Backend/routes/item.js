@@ -26,7 +26,7 @@ router.put('/updateitem/:id',async (req,res)=>{
     if(title){newitem.title=title}
     if(price){newitem.price=price}
     const item = await items.findByIdAndUpdate(req.params.id,{$set:newitem},{new:true})
-    res.send("updated successfully")
+    res.json(item)
     // console.log(item)
 
 })
