@@ -14,6 +14,7 @@ app.use(express.json())
 //Available Routes
 app.use('/api/auth',require('./routes/auth'))
 app.use('/api/items',require('./routes/item'))
+app.use('/api/bills',require('./routes/bills'))
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
