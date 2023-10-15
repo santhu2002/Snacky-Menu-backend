@@ -22,4 +22,17 @@ router.post('/', fetchuser,async (req,res)=>{
 })
 
 
+//to get all bills
+router.get('/allbills', fetchuser,async(req,res)=>{
+
+    try {
+        const allbills = await bills.find({ user: req.user.id });
+        res.json(allbills)
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("internal server error occured")
+    }
+})
+
+
 module.exports = router
