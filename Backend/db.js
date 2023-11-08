@@ -1,8 +1,15 @@
 const mongoose = require('mongoose');
+const dotenv = require("dotenv");
 
+
+
+dotenv.config({
+    path: "./.env",
+  });
 
 // const mongoURI = "mongodb://localhost:27017/Restaraunt"
-const mongoURI = "mongodb+srv://Santhosh:root@cluster0.xvefb4s.mongodb.net/"
+const mongoURI = process.env.mongoURI
+
 
 const connectToMongo =()=>{
     mongoose.connect(mongoURI, ()=>{
